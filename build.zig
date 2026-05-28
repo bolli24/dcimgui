@@ -128,6 +128,7 @@ fn buildModule(b: *std.Build, opts: BuildModuleOptions) !void {
         .root_source_file = b.path(b.fmt("{s}/cimgui.h", .{opts.subdir})),
         .target = b.graph.host,
         .optimize = opts.optimize,
+        .link_libc = true,
     });
 
     // ...and the Zig module for the generated bindings
